@@ -24,3 +24,20 @@ CREATE TABLE relationships (
     FOREIGN KEY (related_person_id)
         REFERENCES characters(character_id)
 );
+
+CREATE TABLE marriages (
+    marriage_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    
+    person1_id INT UNSIGNED NOT NULL,
+    person2_id INT UNSIGNED NOT NULL,
+    
+    marriage_year INT,
+    end_year INT,
+    end_reason VARCHAR(100),
+
+    FOREIGN KEY (person1_id)
+        REFERENCES characters(character_id),
+
+    FOREIGN KEY (person2_id)
+        REFERENCES characters(character_id)
+);
