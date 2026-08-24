@@ -41,3 +41,23 @@ CREATE TABLE marriages (
     FOREIGN KEY (person2_id)
         REFERENCES characters(character_id)
 );
+
+CREATE TABLE dragons (
+    dragon_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE,
+    color VARCHAR(100),
+    status VARCHAR(50)
+);
+
+CREATE TABLE dragon_riders (
+    rider_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    
+    character_id INT UNSIGNED NOT NULL,
+    dragon_id INT UNSIGNED NOT NULL,
+
+    FOREIGN KEY (character_id)
+        REFERENCES characters(character_id),
+
+    FOREIGN KEY (dragon_id)
+        REFERENCES dragons(dragon_id)
+);
