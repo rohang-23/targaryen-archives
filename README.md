@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/dragon-banner.png" alt="Targaryen Dragon" width="800">
+  <img src="assets/dragon-banner.jpg" alt="Targaryen Dragon" width="800">
 </p>
 
 # 🐉 Targaryen Archives
