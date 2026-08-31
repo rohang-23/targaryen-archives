@@ -61,3 +61,22 @@ CREATE TABLE dragon_riders (
     FOREIGN KEY (dragon_id)
         REFERENCES dragons(dragon_id)
 );
+
+CREATE TABLE wars (
+    war_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(150) NOT NULL,
+    start_year INT,
+    end_year INT,
+    description VARCHAR(500)
+);
+
+CREATE TABLE battles (
+    battle_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    war_id INT UNSIGNED NOT NULL,
+    name VARCHAR(150) NOT NULL,
+    battle_year INT,
+    location VARCHAR(150),
+
+    FOREIGN KEY (war_id)
+        REFERENCES wars(war_id)
+);
