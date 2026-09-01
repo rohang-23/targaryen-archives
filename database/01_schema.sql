@@ -80,3 +80,14 @@ CREATE TABLE battles (
     FOREIGN KEY (war_id)
         REFERENCES wars(war_id)
 );
+
+CREATE TABLE rulers (
+    reign_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    character_id INT UNSIGNED NOT NULL,
+    title VARCHAR(100) NOT NULL,
+    start_year INT NOT NULL,
+    end_year INT,
+    
+    FOREIGN KEY (character_id)
+        REFERENCES characters(character_id)
+);
